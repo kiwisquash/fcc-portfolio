@@ -18,7 +18,15 @@ body {
 }
 
 #welcome-section {
+	margin-top: var(--nav-height);
 	height: 100vh;
+}
+
+#welcome-section-header {
+	/* background-color: red; */
+	position: relative;
+	top: 50vh;
+	text-align: center;
 }
 
 :target:before {
