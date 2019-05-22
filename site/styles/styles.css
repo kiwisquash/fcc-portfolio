@@ -5,6 +5,8 @@
 
 body {
 	background-color: #8CCDC8;
+	margin: 0;
+	padding: 0;
 }
 
 #navbar {
@@ -27,6 +29,13 @@ body {
   height: var(--nav-height);
 	margin-top: var(--nav-height-inv);
 	z-index: -10;
+}
+
+footer {
+	border-top-style: solid;
+	border-top-width: 1px;
+	text-align: center;
+	font-size: small;
 }
 
  /* /1* Extra small devices (phones, 600px and down) *1/ */
