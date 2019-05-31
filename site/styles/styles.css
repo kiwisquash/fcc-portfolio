@@ -4,7 +4,8 @@
 }
 
 body {
-	background-color: #8CCDC8;
+	color: hsl(219, 31%, 80%);
+	background-color: hsl(90,50,50);
 	margin: 0;
 	padding: 0;
 }
@@ -14,12 +15,13 @@ body {
 	position: fixed;
 	top: 0;
 	left: 0;
-	background-color: #8CCDC8;
+	background-color: hsl(39, 31%, 20%);
 }
 
 #welcome-section {
 	margin-top: var(--nav-height);
 	height: 100vh;
+	background-color: hsl(39, 31%, 30%);
 }
 
 #welcome-section-header {
@@ -29,15 +31,15 @@ body {
 	text-align: center;
 }
 
-:target:before {
-	content: "";
-  /* background-color: red; */
-  display: block;
-	position: relative;
-  height: var(--nav-height);
-	margin-top: var(--nav-height-inv);
-	z-index: -10;
-}
+/* :target:before { */
+/* 	content: ""; */
+/*   background-color: red; */
+/*   display: block; */
+/* 	position: relative; */
+/*   height: var(--nav-height); */
+/* 	margin-top: var(--nav-height-inv); */
+/* 	z-index: -10; */
+/* } */
 
 footer {
 	border-top-style: solid;
