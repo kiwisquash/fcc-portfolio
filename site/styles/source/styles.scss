@@ -1,13 +1,18 @@
+$logo-width: 15%;
 $nav-link-color: hsl(182, 20%, 95%);
 $nav-bar-color: hsl(272, 47%, 10%);
 $nav-link-hover-color: hsl(152, 20%, 50%);
 $nav-height: 60px;
 $welcome-img-url: "http://crossplatform.ca/wp-content/uploads/2016/10/pexels-photo.jpg";
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	font-family: Optima, sans-serif; 
-	color: hsl(219, 31%, 80%);
-	background-color: hsl(90,50,50);
+	color: $nav-bar-color;
+	background-color: $nav-link-color;
 	margin: 0;
 	padding: 0;
 }
@@ -26,12 +31,14 @@ body {
 }
 
 #logo {
-	width: 15%;
+	color: white;
+	width: $logo-width;
 	padding-left: 1em;
+	font-family: OCR A Std, monospace;
 }
 
 #navlinks {
-	width: 85%;
+	width: 100% - $logo-width;
 	display: flex;
 	justify-content: space-around;
 	font-size: small;
@@ -49,26 +56,31 @@ body {
 }
 
 #welcome-section {
-	padding-top: $nav-height;
 	height: 100vh;
 	background-image: url($welcome-img-url);
 	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#welcome-text {
+	height: 25%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
 }
 
 .head-text-block {
-	background-color: black;
-	padding: 10px;
+	color: $nav-link-color;
+	background-color: $nav-bar-color;
+	padding: 10px 15px;
 }
 
-/* :target:before { */
-/* 	content: ""; */
-/*   background-color: red; */
-/*   display: block; */
-/* 	position: relative; */
-/*   height: var(--nav-height); */
-/* 	margin-top: var(--nav-height-inv); */
-/* 	z-index: -10; */
-/* } */
+.main-section {
+	padding-left: 15px;
+	padding-right: 15px;
+}
 
 footer {
 	border-top-style: solid;
