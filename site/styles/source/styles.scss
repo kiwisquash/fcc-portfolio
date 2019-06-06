@@ -1,7 +1,4 @@
-:root {
-	--nav-height: 1em;
-	--nav-height-inv: -1em;
-}
+$nav-height: 2em;
 
 body {
 	color: hsl(219, 31%, 80%);
@@ -12,23 +9,24 @@ body {
 
 #navbar {
 	width: 100%;
+	height: $nav-height;
 	position: fixed;
 	top: 0;
 	left: 0;
 	background-color: hsl(39, 31%, 20%);
+	z-index: 100;
 }
 
 #welcome-section {
-	margin-top: var(--nav-height);
+	margin-top: $nav-height; 
+	padding-top: 15vh;
 	height: 100vh;
 	background-color: hsl(39, 31%, 30%);
 }
 
-#welcome-section-header {
-	/* background-color: red; */
-	position: relative;
-	top: 50vh;
-	text-align: center;
+.head-text-block {
+	background-color: black;
+	padding: 10px;
 }
 
 /* :target:before { */
