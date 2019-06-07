@@ -10,7 +10,7 @@ $non-welcome-font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, He
 $links-background-color: hsl(182, 10%, 75%);
 $links-text-color: hsl(2, 40%, 25%);
 
-$icon-max-width: 250px;
+$icon-max-width: 200px;
 $welcome-img-url: "../../../img/thoughtful.jpg";
 
 html {
@@ -20,16 +20,21 @@ html {
 body {
 	font-family: $welcome-font-family; 
 	color: $nav-link-color;
-	background-color: $nav-bar-color;
 	margin: 0;
 	padding: 0;
+}
+
+#outer-container {
+	background-color: $nav-bar-color;
+	max-width: 1200px;
+	margin: auto;
 }
 
 #navbar {
 	width: 100%;
 	height: $nav-height;
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-end;
 	align-items: center;
 	position: fixed;
 	top: 0;
@@ -38,12 +43,12 @@ body {
 	z-index: 100;
 }
 
-#logo {
-	color: $nav-bar-color;
-	width: $logo-width;
-	padding-left: 1em;
-	font-family: $welcome-font-family;
-}
+// #logo {
+// 	color: $nav-bar-color;
+// 	width: $logo-width;
+// 	padding-left: 1em;
+// 	font-family: $welcome-font-family;
+// }
 
 #navlinks {
 	width: 100% - $logo-width;
@@ -73,11 +78,10 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-}
-
-#welcome-text {
-	height: 25%;
-	font-size: 150%;
+	font-size: 125%;
+	h1 {
+		text-align: right;
+	}
 }
 
 .filler {
@@ -93,7 +97,7 @@ body {
 .main-section {
 	font-family: $non-welcome-font-family;
 	margin: 0;
-	padding: $nav-height/4 15px $nav-height/4 15px;
+	padding: $nav-height/4 30px $nav-height/4 30px;
 }
 
 #about-me {
@@ -106,8 +110,10 @@ body {
 	border-radius: 50%;
 	border-style: solid;
 	border-width: 5px;
-	width: 250px;
-	height: 250px;
+	width: 66vw;
+	height: 66vw;
+	max-width: 300px;
+	max-height: 300px;
 	background-color: blue;
 	overflow: hidden;
 	transform: rotate(-8deg);
@@ -186,7 +192,6 @@ body {
 
 .link-tile {
 	@extend .project-tile;
-	margin: auto;
 	border-style: none;
 	background-color: $links-background-color;
 }
@@ -209,17 +214,43 @@ footer {
 	font-size: small;
 }
 
- /* /1* Extra small devices (phones, 600px and down) *1/ */
-/* @media only screen and (max-width: 600px) {...} */
+// Small devices (portrait tablets and large phones, 600px and up) 
+@media only screen and (min-width: 600px) {
 
-/* /1* Small devices (portrait tablets and large phones, 600px and up) *1/ */
-/* @media only screen and (min-width: 600px) {...} */
+	.navlink {
+		font-size: medium;
+	}
+} 
 
-/* /1* Medium devices (landscape tablets, 768px and up) *1/ */
-/* @media only screen and (min-width: 768px) {...} */
+// Medium devices (landscape tablets, 768px and up) 
+@media only screen and (min-width: 768px) {
+	#about-me {
+		display: grid;
+		grid-template-areas: 
+			"header header header"
+			"image content content";
+		grid-gap: 30px;
+	}
 
-/* /1* Large devices (laptops/desktops, 992px and up) *1/ */
-/* @media only screen and (min-width: 992px) {...} */
+	#about-me-header {
+		grid-area: header;
+	}
 
-/* /1* Extra large devices (large laptops and desktops, 1200px and up) *1/ */
-/* @media only screen and (min-width: 1200px) {...} */ 
+	#mypic-container {
+		grid-area: image;
+	}
+	
+	#mystory-container {
+		grid-area: content;
+	}
+} 
+
+// Large devices (laptops/desktops, 992px and up)
+@media only screen and (min-width: 992px) {
+ #welcome-section {
+	 h1 {
+		 font-size: 200%;
+	 }
+ }	 
+} 
+
