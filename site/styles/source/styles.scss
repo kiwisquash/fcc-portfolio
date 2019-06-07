@@ -2,8 +2,8 @@ $logo-width: 15%;
 $nav-link-color: hsl(182, 20%, 95%);
 $nav-bar-color: hsl(272, 47%, 10%);
 $nav-link-hover-color: hsl(152, 20%, 50%);
-$nav-height: 60px;
-$welcome-img-url: "http://crossplatform.ca/wp-content/uploads/2016/10/pexels-photo.jpg";
+$nav-height: 65px;
+$welcome-img-url: "../../../img/thoughtful.jpg";
 
 html {
 	scroll-behavior: smooth;
@@ -26,7 +26,7 @@ body {
 	position: fixed;
 	top: 0;
 	left: 0;
-	background-color: $nav-bar-color;
+	background-color: $nav-link-color;
 	z-index: 100;
 }
 
@@ -40,15 +40,18 @@ body {
 #navlinks {
 	width: 100% - $logo-width;
 	display: flex;
-	justify-content: space-around;
-	font-size: small;
+	justify-content: flex-end;
+	padding-right: 15px;
 }
 
 .navlink {
 	text-align: center;
-	color: $nav-link-color;
+	color: $nav-bar-color;
+	margin: 0 10px;
 	display: inline-block;
 	text-decoration: none;
+	font-size: small;
+	font-weight: bold;
 }
 
 .navlink:hover { 
@@ -66,9 +69,11 @@ body {
 
 #welcome-text {
 	height: 25%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
+	font-size: 150%;
+}
+
+.filler {
+	height: 50%
 }
 
 .head-text-block {
@@ -80,6 +85,48 @@ body {
 .main-section {
 	padding-left: 15px;
 	padding-right: 15px;
+}
+
+#mypic-container {
+	margin: auto;
+	border-radius: 50%;
+	border-style: solid;
+	border-width: 5px;
+	width: 250px;
+	height: 250px;
+	background-color: blue;
+	overflow: hidden;
+	transform: rotate(-8deg);
+}
+
+#mypic {
+	width: 120%;
+	margin-left: -10%;
+}
+
+#me-list {
+	li {
+		list-style-type: none;
+	}
+}
+
+.project-tile {
+	margin: auto;
+	width: 70%;
+	overflow: hidden;
+	img {
+		width: 100%;
+	}
+}
+
+.link-tile {
+	margin: auto;
+	width: 70%;
+	overflow: hidden;
+	img {
+		filter: grayscale(100%);
+		width: 100%;
+	}
 }
 
 footer {
