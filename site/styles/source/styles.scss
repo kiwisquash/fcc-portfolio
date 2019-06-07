@@ -3,6 +3,7 @@ $nav-link-color: hsl(182, 20%, 95%);
 $nav-bar-color: hsl(272, 47%, 10%);
 $nav-link-hover-color: hsl(152, 20%, 50%);
 $nav-height: 65px;
+$icon-max-width: 250px;
 $welcome-img-url: "../../../img/thoughtful.jpg";
 
 html {
@@ -110,22 +111,73 @@ body {
 	}
 }
 
+.links-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
 .project-tile {
-	margin: auto;
-	width: 70%;
+	background-color: white;
+	margin: 10px;
+	width: 80%;
+	max-width: $icon-max-width;
+	padding: 5px;
 	overflow: hidden;
+	a {
+		text-decoration: none;
+	}
+	border-style: solid;
+	border-width: 1px
+}
+
+.project-tile:hover {
+	box-shadow: 0px 0px 10px 10px;
+	transform: scale(1.05);
+}
+
+.project-icon-container {
+	padding: 10px;
 	img {
-		width: 100%;
+		display: block;
+	  margin: auto;
+		width: 90%;
 	}
 }
 
+.project-name-container {
+	text-align: center;
+}
+
+#project1 {
+	order: 2;
+}
+
+#project2 {
+	order: 4;
+}
+
+#project3 {
+	order: 3;
+}
+
+#project4 {
+	order: 1;
+}
+
 .link-tile {
+	@extend .project-tile;
 	margin: auto;
-	width: 70%;
-	overflow: hidden;
+	border-style: none;
+}
+
+.link-icon-container {
+	@extend .project-icon-container;
 	img {
+		display: block;
+		margin: auto;
 		filter: grayscale(100%);
-		width: 100%;
+		width: 90%;
 	}
 }
 
