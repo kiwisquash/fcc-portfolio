@@ -202,8 +202,16 @@ hr {
 	transform: scale(1.03);
 }
 
-// Contians the thumbnail image for a given project.
+.project-name-container {
+	order: 1;
+	text-align: center;
+	padding: .5em;
+	font-weight: bold;
+}
+
+// Container for the thumbnail image for a given project.
 .project-thumbnail-container {
+	order: 2;
 	padding: 10px;
 	img {
 		display: block;
@@ -213,12 +221,10 @@ hr {
 	}
 }
 
-.project-name-container {
-	text-align: center;
-}
 
 // Container for icons from icons8.com
 .tech-icon-container {
+	order: 3;
 	margin: 0;
   display: flex;
 	justify-content: center;
@@ -338,10 +344,5 @@ footer {
 
 // Large devices (laptops/desktops, 992px and up)
 // @media only screen and (min-width: 992px) {
-//  #welcome-section {
-// 	 h1 {
-// 		 font-size: 200%;
-// 	 }
-//  }	 
 // } 
 

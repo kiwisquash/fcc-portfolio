@@ -154,7 +154,15 @@ hr {
   transform: scale(1.03);
 }
 
+.project-name-container {
+  order: 1;
+  text-align: center;
+  padding: 0.5em;
+  font-weight: bold;
+}
+
 .project-thumbnail-container {
+  order: 2;
   padding: 10px;
 }
 .project-thumbnail-container img {
@@ -164,11 +172,8 @@ hr {
   height: 150px;
 }
 
-.project-name-container {
-  text-align: center;
-}
-
 .tech-icon-container {
+  order: 3;
   margin: 0;
   display: flex;
   justify-content: center;
