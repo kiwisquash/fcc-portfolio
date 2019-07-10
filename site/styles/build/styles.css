@@ -166,6 +166,12 @@ hr {
   text-align: center;
 }
 
+.tech {
+  display: flex;
+  justify-content: center;
+  font-size: x-large;
+}
+
 #project1 {
   order: 2;
 }
