@@ -219,6 +219,7 @@ footer {
   }
 
   #mystory-container {
+    margin: 0;
     grid-area: content;
     border-style: solid;
     border-width: 1px;
