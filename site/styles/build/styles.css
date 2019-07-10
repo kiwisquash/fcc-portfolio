@@ -153,10 +153,10 @@ hr {
   transform: scale(1.03);
 }
 
-.project-icon-container, .link-icon-container {
+.project-icon-container {
   padding: 10px;
 }
-.project-icon-container img, .link-icon-container img {
+.project-icon-container img {
   display: block;
   margin: auto;
   width: 90%;
@@ -189,13 +189,8 @@ hr {
 .link-tile {
   border-style: none;
   background-color: #b9c5c6;
-}
-
-.link-icon-container img {
-  display: block;
-  margin: auto;
-  filter: grayscale(100%);
-  width: 90%;
+  font-size: 125px;
+  text-align: center;
 }
 
 footer {

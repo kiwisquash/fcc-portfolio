@@ -223,16 +223,8 @@ hr {
 	@extend .project-tile;
 	border-style: none;
 	background-color: $links-background-color;
-}
-
-.link-icon-container {
-	@extend .project-icon-container;
-	img {
-		display: block;
-		margin: auto;
-		filter: grayscale(100%);
-		width: 90%;
-	}
+	font-size: 125px;
+	text-align: center;
 }
 
 
