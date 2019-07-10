@@ -89,6 +89,7 @@ hr {
   color: #262123;
   display: grid;
   grid-template-areas: "header" "image" "content";
+  grid-gap: 30px;
 }
 
 #about-me-header {
@@ -104,9 +105,9 @@ hr {
 #mypic-container {
   grid-area: image;
   margin: auto;
-  border-radius: 50%;
   border-style: solid;
-  border-width: 5px;
+  border-width: 1px;
+  border-radius: 50%;
   width: 60vw;
   height: 60vw;
   max-width: 275px;
@@ -114,6 +115,7 @@ hr {
   background-color: blue;
   overflow: hidden;
   transform: rotate(-8deg);
+  box-shadow: 1px 1px 2px 2px;
 }
 
 #mypic {
@@ -215,7 +217,7 @@ footer {
   #about-me {
     display: grid;
     grid-template-areas: "image header" "image content";
-    grid-gap: 0px 30px;
+    grid-gap: 0px 60px;
   }
 
   #mystory-container {
@@ -225,7 +227,7 @@ footer {
     border-width: 1px;
     padding: 0em 1em;
     border-radius: 5px;
-    box-shadow: 1px 1px;
+    box-shadow: 1px 1px 2px 2px;
   }
 }
 @media only screen and (min-width: 992px) {
