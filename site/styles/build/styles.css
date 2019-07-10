@@ -60,7 +60,7 @@ hr {
 
 #welcome-section {
   height: 100vh;
-  background-image: url("https://drive.google.com/uc?view=export&id=1g33KhLyc0CnGnhR0f-TIJUhSmn67utYP");
+  background-image: url("../../../img/thoughtful.jpg");
   background-size: cover;
   display: flex;
   flex-direction: column;
