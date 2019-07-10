@@ -2,7 +2,7 @@ html {
   scroll-behavior: smooth;
 }
 
-h2 {
+#about-me-header, #projects-header, #links-header {
   text-align: center;
 }
 
@@ -85,6 +85,20 @@ body {
 #about-me {
   background-color: #dfece7;
   color: #262123;
+  display: grid;
+  grid-template-areas: "header" "image" "content";
+}
+
+#about-me-header {
+  grid-area: header;
+}
+
+#mypic-container {
+  grid-area: image;
+}
+
+#mystory-container {
+  grid-area: content;
 }
 
 #mypic-container {
@@ -194,22 +208,14 @@ footer {
   }
 }
 @media only screen and (min-width: 768px) {
+  #about-me-header {
+    text-align: left;
+  }
+
   #about-me {
     display: grid;
-    grid-template-areas: "header header header" "image content content";
-    grid-gap: 30px;
-  }
-
-  #about-me-header {
-    grid-area: header;
-  }
-
-  #mypic-container {
-    grid-area: image;
-  }
-
-  #mystory-container {
-    grid-area: content;
+    grid-template-areas: "image header" "image content";
+    grid-gap: 0px 30px;
   }
 }
 @media only screen and (min-width: 992px) {
