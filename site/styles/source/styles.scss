@@ -118,14 +118,13 @@ body {
 	grid-area: header;
 }
 
-	#mypic-container {
-		grid-area: image;
-	}
-	
 	#mystory-container {
 		grid-area: content;
+		max-width: 40em;
 	}
+
 #mypic-container {
+	grid-area: image;
 	margin: auto;
 	border-radius: 50%;
 	border-style: solid;
