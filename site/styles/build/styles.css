@@ -140,7 +140,6 @@ hr {
   margin: 10px;
   width: 80%;
   max-width: 200px;
-  padding: 5px;
   overflow: hidden;
   border-style: solid;
   border-width: 1px;
@@ -148,6 +147,7 @@ hr {
 }
 .project-tile a, .link-tile a {
   text-decoration: none;
+  color: black;
 }
 
 .project-tile a, .link-tile a {
@@ -177,9 +177,11 @@ hr {
 }
 
 .tech {
+  margin: 0;
   display: flex;
   justify-content: center;
   font-size: x-large;
+  background-color: #CCC;
 }
 
 .tech img {
