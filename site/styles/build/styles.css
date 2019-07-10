@@ -2,6 +2,10 @@ html {
   scroll-behavior: smooth;
 }
 
+h2 {
+  text-align: center;
+}
+
 body {
   font-family: Optima, sans-serif;
   color: #1a0e25;
