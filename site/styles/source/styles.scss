@@ -1,34 +1,39 @@
-$logo-width: 15%;
+// Image on the welcome page (High res)
+$welcome-img-url-high-res: "https://drive.google.com/uc?view=export&id=1g33KhLyc0CnGnhR0f-TIJUhSmn67utYP";
+
+// Prevent content from getting stretched too thin horizontally
+$content-max-width: 1200px;
+
+// Text settings
+$font-family: Optima, sans-serif;
+$text-color: hsl(272, 47%, 10%);
+
+// Nav bar settings
 $nav-bar-color: hsl(182, 20%, 95%);
-$nav-link-color: hsl(272, 47%, 10%);
 $nav-link-hover-color: hsl(152, 20%, 50%);
 $nav-height: 65px;
-$about-me-background-color: hsl(156, 25%, 90%);
-$about-me-text-color: hsl(272, 47%, 10%);
-// $about-me-text-color: hsl(336, 8.2%, 13.9%);
-$welcome-font-family: Optima, sans-serif;
-$non-welcome-font-family: Optima, sans-serif;
-// $non-welcome-font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
-$links-text-color: hsl(272, 47%, 10%);
-$links-background-color: hsl(182, 10%, 75%);
-// $links-text-color: hsl(336, 8.2%, 13.9%);
 
-$icon-max-width: 200px;
-$welcome-img-url: "https://drive.google.com/uc?view=export&id=1g33KhLyc0CnGnhR0f-TIJUhSmn67utYP";
+// Projects thumbnail parameters
+$thumbnail-max-width: 200px;
+
+// Parameters for links
+$links-background-color: hsl(182, 10%, 75%);
+
+// Some global settings
 
 html {
 	scroll-behavior: smooth;
 }
 
-#about-me-header, #projects-header, #links-header {
+h2 {
  text-align: center;	
  font-size: 35px;
 }
 
 body {
 	background-color: $nav-bar-color;
-	font-family: $welcome-font-family; 
-	color: $nav-link-color;
+	font-family: $font-family; 
+	color: $text-color;
 	margin: 0;
 	padding: 0;
 }
@@ -37,11 +42,16 @@ hr {
 	width: 100%;
 }
 
+
+// Outer-container is the parent for all content excluding the footer
+// Its main function is to add a max-width for the content
+
 #outer-container {
-	// background-color: $nav-bar-color;
-	max-width: 1200px;
+	max-width: $content-max-width;
 	margin: auto;
 }
+
+// Navigation bar settings
 
 #navbar {
 	width: 100%;
@@ -56,15 +66,9 @@ hr {
 	z-index: 100;
 }
 
-// #logo {
-// 	color: $nav-bar-color;
-// 	width: $logo-width;
-// 	padding-left: 1em;
-// 	font-family: $welcome-font-family;
-// }
 
 #navlinks {
-	width: 100% - $logo-width;
+	width: 100%;
 	display: flex;
 	justify-content: flex-end;
 	padding-right: 15px;
@@ -72,7 +76,7 @@ hr {
 
 .navlink {
 	text-align: center;
-	color: $nav-link-color;
+	color: $text-color;
 	margin: 0 10px;
 	display: inline-block;
 	text-decoration: none;
@@ -84,58 +88,60 @@ hr {
 	color: $nav-link-hover-color;
 }
 
+
+// Welcome section: greetings an big picture
+
 #welcome-section {
 	height: 100vh;
-	background-image: url($welcome-img-url);
+	background-image: url($welcome-img-url-high-res);
 	background-size: cover;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	font-size: 150%;
 	h1 {
 		text-align: right;
+		font-size: 200%;
+	}
+
+	// Used to create a filler div to better position the text 
+	.filler {
+		height: 50%
+	}
+
+	// Style of the greetings text.
+
+	.head-text-block {
+		// Color scheme purposefully inverts the color scheme of nav bar
+		color: $nav-bar-color;
+		background-color: $text-color;
+		padding: 10px 15px;
 	}
 }
 
-.filler {
-	height: 50%
-}
-
-.head-text-block {
-	color: $nav-bar-color;
-	background-color: $nav-link-color;
-	padding: 10px 15px;
-}
-
-.main-section {
-	font-family: $non-welcome-font-family;
+// Common data for all non-welcome sections
+.non-welcome-section {
 	margin: 0;
-	padding: $nav-height 30px $nav-height 30px;
+	padding: $nav-height/2 30px $nav-height 30px;
 }
 
+// About me section mobile first
 #about-me {
-	// background-color: $about-me-background-color;
-	color: $about-me-text-color;
-	display: grid;
-	grid-template-areas: 
-		"header"
-		"image"
-		"content";
-	grid-gap: 30px;
+	display: flex;
+	flex-direction: column;
 }
 
 #about-me-header {
-	grid-area: header;
+	order: 1;
 }
 
-	#mystory-container {
-		grid-area: content;
-		margin: auto;
-		max-width: 40em;
-	}
+#mystory-container {
+	order: 3;
+	margin: auto;
+	max-width: 40em;
+}
 
 #mypic-container {
-	grid-area: image;
+	order: 2;
 	margin: auto;
 	border-style: solid;
 	border-width: 1px;
@@ -161,41 +167,43 @@ hr {
 	}
 }
 
+// links container contains external links to projects and my 'social media' links
+
 .links-container {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 }
 
+// tiles that hold a project
+
 .project-tile {
-	background-color: white;
+	background-color: #FFF;
 	margin: 10px;
 	width: 80%;
-	max-width: $icon-max-width;
-	// padding: 5px;
+	max-width: $thumbnail-max-width;
 	overflow: hidden;
 	a {
 		text-decoration: none;
 		color: black;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 	}
 	border-style: solid;
-	border-width: 1px;
+	border-width: 2px;
 	border-color: #DDD;
 }
 
-.project-tile a {
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-
+// On hover, the project tile appears to pop out of the page
 .project-tile:hover {
 	box-shadow: 0px 1px 4px 1px;
 	transform: scale(1.03);
 }
 
-.project-icon-container {
+// Contians the thumbnail image for a given project.
+.project-thumbnail-container {
 	padding: 10px;
 	img {
 		display: block;
@@ -209,18 +217,19 @@ hr {
 	text-align: center;
 }
 
-.tech {
+// Container for icons from icons8.com
+.tech-icon-container {
 	margin: 0;
   display: flex;
 	justify-content: center;
 	font-size: x-large;
 	background-color: #CCC;
+	img {
+		width: 20%;
+	}
 }
 
-.tech img {
-	width: 20%;
-}
-
+// Indicates ordering of the projects
 #drum-machine {
 	order: 2;
 }
@@ -258,11 +267,8 @@ hr {
 	order: 4;
 }
 
-
-#links {
-	color: $links-text-color; 
-	// background-color: $links-background-color;
-}
+// Settings for links
+// TODO: Let's make this prettier
 
 .link-tile {
 	@extend .project-tile;
@@ -283,6 +289,16 @@ footer {
 // Small devices (portrait tablets and large phones, 600px and up) 
 @media only screen and (min-width: 600px) {
 
+// Increase font-size for welcome text
+
+#welcome-section h1 {
+	font-size: 250%;
+}
+
+
+// Increase font-size for nav
+// TODO: Once hamburger is added, this won't be necessary 
+
 	.navlink {
 		font-size: medium;
 	}
@@ -290,10 +306,8 @@ footer {
 
 // Medium devices (landscape tablets, 768px and up) 
 @media only screen and (min-width: 768px) {
-	#about-me-header {
-		text-align: left;
-	}
 
+	// Use grid layout for the "About me section" for larger screens
 	#about-me {
 		display: grid;
 		grid-template-areas: 
@@ -302,9 +316,18 @@ footer {
 		grid-gap: 0px 60px;
 	}
 
+	#mypic-container {
+		grid-area: image;
+	}
+	
+	#about-me-header {
+		grid-area: header;
+		text-align: left;
+	}
+
 	#mystory-container {
-		margin: 0;
 		grid-area: content;
+		margin: 0;
 		border-style: solid;
 		border-width: 1px;
 		padding: 0em 1em;
@@ -314,11 +337,11 @@ footer {
 } 
 
 // Large devices (laptops/desktops, 992px and up)
-@media only screen and (min-width: 992px) {
- #welcome-section {
-	 h1 {
-		 font-size: 200%;
-	 }
- }	 
-} 
+// @media only screen and (min-width: 992px) {
+//  #welcome-section {
+// 	 h1 {
+// 		 font-size: 200%;
+// 	 }
+//  }	 
+// } 
 

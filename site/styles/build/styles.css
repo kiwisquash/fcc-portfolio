@@ -2,7 +2,7 @@ html {
   scroll-behavior: smooth;
 }
 
-#about-me-header, #projects-header, #links-header {
+h2 {
   text-align: center;
   font-size: 35px;
 }
@@ -38,7 +38,7 @@ hr {
 }
 
 #navlinks {
-  width: 85%;
+  width: 100%;
   display: flex;
   justify-content: flex-end;
   padding-right: 15px;
@@ -65,47 +65,42 @@ hr {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 150%;
 }
 #welcome-section h1 {
   text-align: right;
+  font-size: 200%;
 }
-
-.filler {
+#welcome-section .filler {
   height: 50%;
 }
-
-.head-text-block {
+#welcome-section .head-text-block {
   color: #f0f5f5;
   background-color: #1a0e25;
   padding: 10px 15px;
 }
 
-.main-section {
-  font-family: Optima, sans-serif;
+.non-welcome-section {
   margin: 0;
-  padding: 65px 30px 65px 30px;
+  padding: 32.5px 30px 65px 30px;
 }
 
 #about-me {
-  color: #1a0e25;
-  display: grid;
-  grid-template-areas: "header" "image" "content";
-  grid-gap: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
 #about-me-header {
-  grid-area: header;
+  order: 1;
 }
 
 #mystory-container {
-  grid-area: content;
+  order: 3;
   margin: auto;
   max-width: 40em;
 }
 
 #mypic-container {
-  grid-area: image;
+  order: 2;
   margin: auto;
   border-style: solid;
   border-width: 1px;
@@ -136,21 +131,18 @@ hr {
 }
 
 .project-tile, .link-tile {
-  background-color: white;
+  background-color: #FFF;
   margin: 10px;
   width: 80%;
   max-width: 200px;
   overflow: hidden;
   border-style: solid;
-  border-width: 1px;
+  border-width: 2px;
   border-color: #DDD;
 }
 .project-tile a, .link-tile a {
   text-decoration: none;
   color: black;
-}
-
-.project-tile a, .link-tile a {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -162,10 +154,10 @@ hr {
   transform: scale(1.03);
 }
 
-.project-icon-container {
+.project-thumbnail-container {
   padding: 10px;
 }
-.project-icon-container img {
+.project-thumbnail-container img {
   display: block;
   margin: 0 auto;
   width: 90%;
@@ -176,15 +168,14 @@ hr {
   text-align: center;
 }
 
-.tech {
+.tech-icon-container {
   margin: 0;
   display: flex;
   justify-content: center;
   font-size: x-large;
   background-color: #CCC;
 }
-
-.tech img {
+.tech-icon-container img {
   width: 20%;
 }
 
@@ -225,10 +216,6 @@ hr {
   order: 4;
 }
 
-#links {
-  color: #1a0e25;
-}
-
 .link-tile {
   border-style: none;
   background-color: #b9c5c6;
@@ -244,34 +231,38 @@ footer {
 }
 
 @media only screen and (min-width: 600px) {
+  #welcome-section h1 {
+    font-size: 250%;
+  }
+
   .navlink {
     font-size: medium;
   }
 }
 @media only screen and (min-width: 768px) {
-  #about-me-header {
-    text-align: left;
-  }
-
   #about-me {
     display: grid;
     grid-template-areas: "image header" "image content";
     grid-gap: 0px 60px;
   }
 
+  #mypic-container {
+    grid-area: image;
+  }
+
+  #about-me-header {
+    grid-area: header;
+    text-align: left;
+  }
+
   #mystory-container {
-    margin: 0;
     grid-area: content;
+    margin: 0;
     border-style: solid;
     border-width: 1px;
     padding: 0em 1em;
     border-radius: 5px;
     box-shadow: 1px 1px 2px 2px;
-  }
-}
-@media only screen and (min-width: 992px) {
-  #welcome-section h1 {
-    font-size: 200%;
   }
 }
 
