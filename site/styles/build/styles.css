@@ -4,6 +4,7 @@ html {
 
 #about-me-header, #projects-header, #links-header {
   text-align: center;
+  font-size: 35px;
 }
 
 body {
@@ -64,7 +65,7 @@ hr {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 125%;
+  font-size: 150%;
 }
 #welcome-section h1 {
   text-align: right;
@@ -143,9 +144,17 @@ hr {
   overflow: hidden;
   border-style: solid;
   border-width: 1px;
+  border-color: #DDD;
 }
 .project-tile a, .link-tile a {
   text-decoration: none;
+}
+
+.project-tile a, .link-tile a {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .project-tile:hover, .link-tile:hover {
@@ -158,8 +167,9 @@ hr {
 }
 .project-icon-container img {
   display: block;
-  margin: auto;
+  margin: 0 auto;
   width: 90%;
+  height: 150px;
 }
 
 .project-name-container {
@@ -172,20 +182,45 @@ hr {
   font-size: x-large;
 }
 
-#project1 {
+.tech img {
+  width: 20%;
+}
+
+#drum-machine {
   order: 2;
 }
 
-#project2 {
-  order: 4;
-}
-
-#project3 {
+#markdown-previewer {
   order: 3;
 }
 
-#project4 {
+#display-users {
+  display: none;
   order: 1;
+}
+
+#tic-tac-toe {
+  order: 7;
+}
+
+#random-quote-generator {
+  order: 6;
+}
+
+#techlead-tribute {
+  order: 8;
+}
+
+#survey-form {
+  order: 9;
+}
+
+#fight-milk {
+  order: 5;
+}
+
+#test-driven-development {
+  order: 4;
 }
 
 #links {
