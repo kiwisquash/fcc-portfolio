@@ -276,12 +276,26 @@ hr {
 // Settings for links
 // TODO: Let's make this prettier
 
+#links {
+	display: flex;
+	width: 75%;
+	max-width: 300px;
+	margin: auto;
+	justify-content: space-around;
+}
+
 .link-tile {
-	@extend .project-tile;
+	margin: 10px;
 	border-style: none;
-	background-color: $links-background-color;
-	font-size: 125px;
+	font-size: 400%;
 	text-align: center;
+	i {
+		color: $text-color; 
+	}
+	i:hover {
+		transform: scale(1.1);
+		color: $nav-link-hover-color;
+	}
 }
 
 
